@@ -1,0 +1,34 @@
+
+
+
+#botonempleados {
+    background-image: url("fondoapp.jpg"); 
+    color: white; 
+    border: 2px solid #005f73; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    border-radius: 20px; 
+     
+}
+
+#botonempleados:hover {
+     
+    border: 2px solid #00a3c4; 
+     
+}
+
+#botonclientes {
+    background-image: url("fondoapp.jpg"); 
+    color: white;
+    border: 2px solid #005f73; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    border-radius: 20px; 
+   
+}
+
+#botonclientes:hover {
+     
+    border: 2px solid #00a3c4; 
+}
+
