@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QSpacerItem, QSizePolicy, QStackedWidget
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 from funciones import *
@@ -18,6 +18,7 @@ class MainWindow(QWidget):
         background_label.setScaledContents(True)  # Ajustar imagen al tamaño de la ventana
         background_label.setGeometry(0, 0, self.width(), self.height())
         layout_principal = QVBoxLayout()
+        
 
         # Código para el cartel
         self.carteltienda = QLabel(self)
@@ -39,7 +40,8 @@ class MainWindow(QWidget):
         self.botonempleados.setObjectName("botonempleados")
         self.botonclientes.setFixedSize(160, 50)
         self.botonempleados.setFixedSize(160, 50)
-        self.aplicar_stylesheet('estilos.css')
+        
+        self.botonempleados.clicked.connect(login)
 
         # Layout para los botones
         layout_botones = QVBoxLayout()
@@ -57,14 +59,9 @@ class MainWindow(QWidget):
         layout_principal.addLayout(layout_botones)
         layout_principal.setContentsMargins(70, 200, 50, 0)  # Márgenes de la ventana
         self.setLayout(layout_principal)
+        aplicar_stylesheet(self, 'estilos.css')
 
-    def aplicar_stylesheet(self, filename):      
-        """Aplica los estilos CSS desde un archivo."""
-        file = QFile(filename)
-        if file.open(QFile.ReadOnly | QFile.Text):
-            stylesheet = QTextStream(file)
-            self.setStyleSheet(stylesheet.readAll())  # Aplica los estilos
-            file.close()
+    
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
@@ -72,6 +69,9 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
+
+
 
 
 
