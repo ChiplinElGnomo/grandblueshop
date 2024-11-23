@@ -1,8 +1,10 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QStackedWidget
+from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 from funciones import *  
+
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -15,11 +17,11 @@ class MainWindow(QWidget):
         
         
         #* Aqui se crea un label para la imagen de fondo usando pixmap y se configura para que se adapte a la ventana principal
-        background_label = QLabel(self)
-        pixmap = QPixmap('fondoapp2.png')
-        background_label.setPixmap(pixmap)
-        background_label.setScaledContents(True)
-        background_label.setGeometry(0, 0, self.width(), self.height())
+        self.background_label = QLabel(self)
+        pixmap = QPixmap('recursos/fondoapp2.png')
+        self.background_label.setPixmap(pixmap)
+        self.background_label.setScaledContents(True)
+        self.background_label.setGeometry(0, 0, self.width(), self.height())
 
         
         #! ===========================>Vista inicial<=========================== !#
@@ -32,7 +34,7 @@ class MainWindow(QWidget):
 
         #* Codigo para el cartel de grand blue
         self.carteltienda = QLabel(self)
-        pixmap2 = QPixmap('grand_blue.png')
+        pixmap2 = QPixmap('recursos/grand_blue.png')
         self.carteltienda.setPixmap(pixmap2)
         self.carteltienda.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
         self.carteltienda.setFixedSize(400, 200)
@@ -58,6 +60,7 @@ class MainWindow(QWidget):
         layout_botones.setSpacing(20)
         layout_principal.addLayout(layout_botones) #* Aqui se añade el layout de los botones al layout principal para unirlo con el del cartel
         layout_principal.setContentsMargins(70, 200, 50, 0)  # Márgenes de la ventana
+
 
 
          
