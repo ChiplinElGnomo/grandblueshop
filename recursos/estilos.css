@@ -1,0 +1,98 @@
+
+
+
+#botonempleados {
+    background-image: url("recursos/fondoapp.jpg"); 
+    color: white; 
+    border: 2px solid #005f73; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    border-radius: 20px; 
+     
+}
+
+#botonempleados:hover {
+     
+    border: 2px solid #00a3c4; 
+     
+}
+
+#botonclientes {
+    background-image: url("recursos/fondoapp.jpg"); 
+    color: white;
+    border: 2px solid #005f73; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    border-radius: 20px; 
+   
+}
+
+#botonclientes:hover {
+     
+    border: 2px solid #00a3c4; 
+}
+
+#cuadrousuario {
+
+    color:  white;
+    border: 2px solid #005f73;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: rgba(0, 163, 196, 0.7);
+
+
+}
+
+
+#cuadrocontra {
+    color: white;
+    border: 2px solid #005f73;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: rgba(0, 163, 196, 0.7);
+
+}
+
+#cuadrousuario:focus {
+
+    
+    background-color: rgba(0, 140, 168, 0.9);
+
+
+
+}
+
+#cuadrocontra:focus {
+
+    
+    background-color: rgba(0, 140, 168, 0.9);
+
+
+}
+
+
+#botonlogin {
+
+    color: black;
+    background-image:url(recursos/seno1.ico);
+    background-position: center;                              /*rgba(0, 163, 196, 1) */
+    border: 2px solid #005f73;
+    padding: 10px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+
+
+
+
+}
+
+
+
+
+#botonlogin:pressed {
+
+    background-image:url(recursos/seno2.ico);
+    background-position: center;                         /*#007e97*/
+}
