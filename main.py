@@ -3,7 +3,9 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLa
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
-from funciones import *  
+from funciones import * 
+from funciones import set_ventana_principal
+
 
 
 class MainWindow(QWidget):
@@ -22,7 +24,7 @@ class MainWindow(QWidget):
         self.background_label.setPixmap(pixmap)
         self.background_label.setScaledContents(True)
         self.background_label.setGeometry(0, 0, self.width(), self.height())
-
+        
         
         #! ===========================>Vista inicial<=========================== !#
         # Crear la vista principal (ya está creada en el constructor)
@@ -30,6 +32,7 @@ class MainWindow(QWidget):
         layout_principal = QVBoxLayout(self.vista_principal) #* Layout que contiene a su vez los layouts de los botones y el cartel
         self.login = QWidget(self)
         crear_login(self.login) 
+        
         
 
         #* Codigo para el cartel de grand blue
@@ -91,6 +94,7 @@ class MainWindow(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
+    set_ventana_principal(window)
     window.show()
     sys.exit(app.exec_())
 

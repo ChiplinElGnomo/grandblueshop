@@ -6,10 +6,15 @@ import sys
 import os
 
 
+
 jukebox = QMediaPlayer()
  
 music_playing = False
+ventana_principal = None
 
+def set_ventana_principal(ventana):
+    global ventana_principal
+    ventana_principal = ventana
 
 def aplicar_stylesheet(widget, filename):
     """Aplica los estilos CSS desde un archivo ubicado en la carpeta 'recursos'."""
@@ -95,7 +100,7 @@ def mostrar_login(self): #* Esta funcion solamente cambia la pagina de la vista 
 
 def comprobarlogin(self):
 
-    global jukebox, music_playing 
+    global jukebox, music_playing, ventana_principal 
     musica = os.path.join(os.getcwd(), "recursos", "musicaloli.mp3")
     usuario = self.usuario_input.text()
     contra = self.contraseña_input.text()
@@ -109,6 +114,13 @@ def comprobarlogin(self):
 
 
     elif usuario == "Kohei" and contra == "Nanaka":
+         
+
+         if ventana_principal:
+            pixmap = QPixmap('recursos/lolianime.jpg')  # Cambia por la nueva imagen
+            ventana_principal.background_label.setPixmap(pixmap)
+            ventana_principal.background_label.setScaledContents(True)
+            scaled_pixmap = pixmap.scaled(ventana_principal.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
          if not music_playing:
             QMessageBox.information(self, "Easter egg", "Has desbloqueado el easter egg de Kohei, felicidades")
             jukebox.setMedia(QMediaContent(QUrl.fromLocalFile(musica)))
